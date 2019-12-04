@@ -21,7 +21,14 @@ public class MenuManagerImpl implements MenuManager {
     }
 
     public List<Menu> getMenusByMidCid(String mid, String cid) {
-        return menuDAO.getMenuByMidCid(mid, cid);
+        List<Menu> list = null;
+        try {
+            list = menuDAO.getMenuByMidCid(mid, cid);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return   list;
+
     }
 
     public Menu getMenuByMid(String mid) {
